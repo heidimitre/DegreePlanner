@@ -43,9 +43,9 @@ Course.prototype.removePrerequisite = function(removeCourse){
   return 0;
 };
 
-Course.prototype.toString = function(){
-  return this.number + ", " + this.title + ", Credit Hours: " + this.creditHours + ", Complete: " + this.isComplete;
-};
+ Course.prototype.toString = function(){
+  return this.number + ", " + this.title + ", Credit Hours: " + this.creditHours + ", Complete: " + this.isComplete + "\n";
+ };
 
 Course.prototype.displayPrerequisites = function(){
   var prerequisiteString = "";
