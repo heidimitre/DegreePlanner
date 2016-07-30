@@ -1,6 +1,6 @@
 var DegreePlan = require('./degreePlan');
 var Course = require('./course');
-var fs = require('fs');
+var writePlan = require('./writePlan');
 
 var plan = new DegreePlan('Computer Science');
 
@@ -26,10 +26,4 @@ plan.addCourse(CSE340);
 plan.addCourse(CSE355);
 plan.addCourse(CSE430);
 
-fs.writeFile('degree_plan.txt', plan.courseList, function(err){
-  if(err){
-    return console.log(err);
-  }
-
-  console.log("File saved as degree_plan.txt");
-});
+writePlan(plan.courseList);
