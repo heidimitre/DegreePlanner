@@ -17,4 +17,4 @@ function addNewCourse(course){
 };
 
 createPlan(courses.list);
-writePlan(plan.courseList);
+writePlan(plan);

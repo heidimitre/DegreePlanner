@@ -35,4 +35,13 @@ DegreePlan.prototype.removeCourse = function(removeCourse){
   }
   return 0;
 };
+
+DegreePlan.prototype.toString = function(){
+  var courseStrings = this.courseList.reduce(function(acc, course){
+    acc += course.toString();
+    return acc;
+  }, "");
+  return "Degree Plan Name: " + this.name + "\n" + courseStrings;
+};
+
 module.exports = DegreePlan;

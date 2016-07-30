@@ -1,10 +1,4 @@
-CSE 110, Principles of Programming with Java, Credit Hours: 3, Complete: false
-,CSE 205, Object-Oriented Programming and Data Structures, Credit Hours: 3, Complete: false
-,CSE 120, Digital Design Fundamentals, Credit Hours: 3, Complete: false
-,CSE 230, Computer Organization and Assembly Language Programming, Credit Hours: 3, Complete: false
-,CSE 240, Introduction to Programming Languages, Credit Hours: 3, Complete: false
-,CSE 310, Data Structures and Algorithms, Credit Hours: 3, Complete: false
-,CSE 360, Introduction to Software Engineering, Credit Hours: 3, Complete: false
-,CSE 340, Principles of Programming Languages, Credit Hours: 3, Complete: false
-,CSE 355, Introduction to Theoretical Computer Science, Credit Hours: 3, Complete: false
-,CSE 430, Operating Systems, Credit Hours: 3, Complete: false
+Degree Plan Name: Computer Science
+CSE 120, Digital Design Fundamentals, Credit Hours: 3, Complete: false
+CSE 240, Introduction to Programming Languages, Credit Hours: 3, Complete: false
+CSE 340, Principles of Programming Languages, Credit Hours: 3, Complete: false

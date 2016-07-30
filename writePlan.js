@@ -1,7 +1,7 @@
 var fs = require('fs');
 
-var writePlan = function(courseList){
-  fs.writeFile('degree_plan.txt', courseList, function(err){
+var writePlan = function(degreePlan){
+  fs.writeFile('degree_plan.txt', degreePlan.toString(), function(err){
     if(err){
       return console.log(err);
     }
