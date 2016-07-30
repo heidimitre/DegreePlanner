@@ -1,0 +1,21 @@
+{
+  "name": "Computer Science",
+
+  "list": [
+    {
+      "number": "CSE 120",
+      "title": "Digital Design Fundamentals",
+      "creditHours": 3
+    },
+    {
+      "number": "CSE 240",
+      "title": "Introduction to Programming Languages",
+      "creditHours": 3
+    },
+    {
+      "number": "CSE 340",
+      "title": "Principles of Programming Languages",
+      "creditHours": 3
+    }
+  ]
+}
