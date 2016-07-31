@@ -16,6 +16,11 @@
       "number": "CSE 340",
       "title": "Principles of Programming Languages",
       "creditHours": 3
+    },
+    {
+      "number": "CSE 205",
+      "title": "Object-Oriented Programming and Data Structures",
+      "creditHours": 3
     }
   ]
 }

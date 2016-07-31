@@ -1,0 +1,16 @@
+{
+  "list": [
+    {
+      "courseNumber": "CSE 240",
+      "prerequisiteNumber": "CSE 205"
+    },
+    {
+      "courseNumber": "CSE 340",
+      "prerequisiteNumber": "CSE 240"
+    },
+    {
+      "courseNumber": "CSE 340",
+      "prerequisiteNumber": "CSE 120"
+    }
+  ]
+}

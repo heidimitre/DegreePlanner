@@ -1,4 +1,5 @@
 var courses = require('./resources/degreePlan.json');
+var relationships = require('./resources/relationships.json');
 var DegreePlan = require('./degreePlan');
 var Course = require('./course');
 var writePlan = require('./writePlan');
@@ -12,9 +13,15 @@ function createPlan(list){
 };
 
 function addNewCourse(course){
-  var newCourse = new Course(course.number, course.title, course.creditHours);
-  plan.addCourse(newCourse);
+  plan.addCourse(course.number, course.title, course.creditHours);
+};
+
+function makeRelationships(relationshipsList){
+  relationshipsList.forEach(function(relationship){
+    plan.addPrerequisite(relationship.courseNumber, relationship.prerequisiteNumber);
+  });
 };
 
 createPlan(courses.list);
+makeRelationships(relationships.list);
 writePlan(plan);

@@ -1,4 +1,5 @@
 Degree Plan Name: Computer Science
-CSE 120, Digital Design Fundamentals, Credit Hours: 3, Complete: false
-CSE 240, Introduction to Programming Languages, Credit Hours: 3, Complete: false
-CSE 340, Principles of Programming Languages, Credit Hours: 3, Complete: false
+CSE 120, Digital Design Fundamentals, Credit Hours: 3, Complete: false, Prerequisites: 
+CSE 240, Introduction to Programming Languages, Credit Hours: 3, Complete: false, Prerequisites:  CSE 205
+CSE 340, Principles of Programming Languages, Credit Hours: 3, Complete: false, Prerequisites:  CSE 240 CSE 120
+CSE 205, Object-Oriented Programming and Data Structures, Credit Hours: 3, Complete: false, Prerequisites: 

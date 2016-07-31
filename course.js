@@ -44,13 +44,13 @@ Course.prototype.removePrerequisite = function(removeCourse){
 };
 
  Course.prototype.toString = function(){
-  return this.number + ", " + this.title + ", Credit Hours: " + this.creditHours + ", Complete: " + this.isComplete + "\n";
+  return this.number + ", " + this.title + ", Credit Hours: " + this.creditHours + ", Complete: " + this.isComplete + ", Prerequisites: " + this.displayPrerequisites() + "\n";
  };
 
 Course.prototype.displayPrerequisites = function(){
   var prerequisiteString = "";
   for (var i = 0; i < this.prerequisiteList.length; i++){
-    prerequisiteString = prerequisiteString + "" + this.prerequisiteList[i].number;
+    prerequisiteString = prerequisiteString + " " + this.prerequisiteList[i].number;
   }
   return prerequisiteString;
 };
