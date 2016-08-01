@@ -1,16 +1,128 @@
 {
   "list": [
     {
+      "courseNumber": "CSE 205",
+      "prerequisiteNumber": "CSE 110"
+    },
+    {
+      "courseNumber": "MAT 266",
+      "prerequisiteNumber": "MAT 265"
+    },
+    {
+      "courseNumber": "ENG 102",
+      "prerequisiteNumber": "ENG 101"
+    },
+    {
+      "courseNumber": "MAT 243",
+      "prerequisiteNumber": "MAT 265"
+    },
+    {
+      "courseNumber": "MAT 267",
+      "prerequisiteNumber": "MAT 266"
+    },
+    {
+      "courseNumber": "CSE 230",
+      "prerequisiteNumber": "CSE 110"
+    },
+    {
+      "courseNumber": "CSE 230",
+      "prerequisiteNumber": "CSE 120"
+    },
+    {
       "courseNumber": "CSE 240",
       "prerequisiteNumber": "CSE 205"
     },
     {
-      "courseNumber": "CSE 340",
+      "courseNumber": "MAT 343",
+      "prerequisiteNumber": "MAT 266"
+    },
+    {
+      "courseNumber": "CSE 310",
       "prerequisiteNumber": "CSE 240"
     },
     {
+      "courseNumber": "CSE 310",
+      "prerequisiteNumber": "MAT 243"
+    },
+    {
+      "courseNumber": "CSE 301",
+      "prerequisiteNumber": "CSE 205"
+    },
+    {
+      "courseNumber": "CSE 360",
+      "prerequisiteNumber": "CSE 240"
+    },
+    {
+      "courseNumber": "IEE 380",
+      "prerequisiteNumber": "MAT 266"
+    },
+    {
       "courseNumber": "CSE 340",
-      "prerequisiteNumber": "CSE 120"
+      "prerequisiteNumber": "CSE 310"
+    },
+    {
+      "courseNumber": "CSE 340",
+      "prerequisiteNumber": "CSE 230"
+    },
+    {
+      "courseNumber": "CSE 355",
+      "prerequisiteNumber": "CSE 310"
+    },
+    {
+      "courseNumber": "CSE 4X1",
+      "prerequisiteNumber": "CSE 310"
+    },
+    {
+      "courseNumber": "CSE 4X2",
+      "prerequisiteNumber": "CSE 310"
+    },
+    {
+      "courseNumber": "CSE 4X3",
+      "prerequisiteNumber": "CSE 310"
+    },
+    {
+      "courseNumber": "CSE 4X4",
+      "prerequisiteNumber": "CSE 310"
+    },
+    {
+      "courseNumber": "CSE 4X5",
+      "prerequisiteNumber": "CSE 310"
+    },
+    {
+      "courseNumber": "TEC 1XX",
+      "prerequisiteNumber": "IEE 380"
+    },
+    {
+      "courseNumber": "TEC 2XX",
+      "prerequisiteNumber": "IEE 380"
+    },
+    {
+      "courseNumber": "CSE 430",
+      "prerequisiteNumber": "CSE 230"
+    },
+    {
+      "courseNumber": "CSE 430",
+      "prerequisiteNumber": "CSE 310"
+    },
+    {
+      "courseNumber": "CSE 485",
+      "prerequisiteNumber": "CSE 430"
+    },
+    {
+      "courseNumber": "CSE 485",
+      "prerequisiteNumber": "CSE 340"
+    },
+    {
+      "courseNumber": "CSE 485",
+      "prerequisiteNumber": "CSE 355"
+    },
+    {
+      "courseNumber": "CSE 485",
+      "prerequisiteNumber": "CSE 360"
+    },
+    {
+      "courseNumber": "CSE 486",
+      "prerequisiteNumber": "CSE 485"
     }
   ]
 }

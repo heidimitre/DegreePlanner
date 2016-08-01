@@ -3,8 +3,88 @@
 
   "list": [
     {
+      "number": "CSE 110",
+      "title": "Principles of Programming with Java",
+      "creditHours": 3
+    },
+    {
+      "number": "MAT 265",
+      "title": "Calculus for Engineers I",
+      "creditHours": 3
+    },
+    {
+      "number": "ENG 101",
+      "title": "First-Year Composition I",
+      "creditHours": 3
+    },
+    {
+      "number": "ASU 101",
+      "title": "The ASU Experience",
+      "creditHours": 1
+    },
+    {
+      "number": "FSE 100",
+      "title": "Introduction to Engineering",
+      "creditHours": 2
+    },
+    {
+      "number": "SBG XXX",
+      "title": "Social-Behavioral Sciences (SB) and Global Awareness(G)",
+      "creditHours": 3
+    },
+    {
+      "number": "CSE 205",
+      "title": "Object-Oriented Programming and Data Structures",
+      "creditHours": 3
+    },
+    {
+      "number": "MAT 266",
+      "title": "Calculus for Engineers II",
+      "creditHours": 3
+    },
+    {
+      "number": "ENG 102",
+      "title": "First-Year Composition II",
+      "creditHours": 3
+    },
+    {
+      "number": "SCI 1XX",
+      "title": "Lab Science and Natural Science-Quantitative (SQ)",
+      "creditHours": 4
+    },
+    {
+      "number": "XXX 1XX",
+      "title": "Elective",
+      "creditHours": 3
+    },
+    {
       "number": "CSE 120",
       "title": "Digital Design Fundamentals",
+      "creditHours": 3
+    },
+    {
+      "number": "MAT 243",
+      "title": "Discrete Mathematical Structures",
+      "creditHours": 3
+    },
+    {
+      "number": "MAT 267",
+      "title": "Calculus for Engineers III",
+      "creditHours": 3
+    },
+    {
+      "number": "SCI 2XX",
+      "title": "Lab Science and Natural Science-General (SG) or Quantitative (SQ)",
+      "creditHours": 4
+    },
+    {
+      "number": "HUC XXX",
+      "title": "Humanities, Arts and Design (HU) and Cultural Diversity in the U.S. (C)",
+      "creditHours": 3
+    },
+    {
+      "number": "CSE 230",
+      "title": "Computer Organization and Assembly Language Programming",
       "creditHours": 3
     },
     {
@@ -13,13 +93,118 @@
       "creditHours": 3
     },
     {
+      "number": "MAT 343",
+      "title": "Applied Linear Algebra",
+      "creditHours": 3
+    },
+    {
+      "number": "SCI 3XX",
+      "title": "Lab Science and Natural Science-General (SG) or Quantitative (SQ)",
+      "creditHours": 4
+    },
+    {
+      "number": "HUX XXX",
+      "title": "Humanities, Arts and Design (HU)",
+      "creditHours": 3
+    },
+    {
+      "number": "CSE 310",
+      "title": "Data Structures and Algorithms",
+      "creditHours": 3
+    },
+    {
+      "number": "CSE 301",
+      "title": "Computing Ethics",
+      "creditHours": 1
+    },
+    {
+      "number": "CSE 360",
+      "title": "Introduction to Software Engineering",
+      "creditHours": 3
+    },
+    {
+      "number": "IEE 380",
+      "title": "Probability and Statistics for Engineering Problem Solving",
+      "creditHours": 3
+    },
+    {
+      "number": "SBH XXX",
+      "title": "Social-Behavioral Sciences (SB) and Historical Awareness (H)",
+      "creditHours": 3
+    },
+    {
+      "number": "SBX XXX",
+      "title": "Social-Behavioral Sciences (SB)",
+      "creditHours": 3
+    },
+    {
       "number": "CSE 340",
       "title": "Principles of Programming Languages",
       "creditHours": 3
     },
     {
-      "number": "CSE 205",
-      "title": "Object-Oriented Programming and Data Structures",
+      "number": "CSE 355",
+      "title": "Introduction to Theoretical Computer Science",
+      "creditHours": 3
+    },
+    {
+      "number": "CSE 4X1",
+      "title": "Upper Division CS Elective",
+      "creditHours": 3
+    },
+    {
+      "number": "TEC 1XX",
+      "title": "Upper Division Technical Elective",
+      "creditHours": 3
+    },
+    {
+      "number": "UHS XXX",
+      "title": "Upper-Division Humanities, Arts and Design (HU) or Social-Behavioral Sciences (SB)",
+      "creditHours": 3
+    },
+    {
+      "number": "CSE 485",
+      "title": "Computer Science Capstone I",
+      "creditHours": 3
+    },
+    {
+      "number": "CSE 430",
+      "title": "Operating Systems",
+      "creditHours": 3
+    },
+    {
+      "number": "CSE 4X2",
+      "title": "Upper Division CS Elective",
+      "creditHours": 3
+    },
+    {
+      "number": "CSE 4X3",
+      "title": "Upper Division CS Elective",
+      "creditHours": 3
+    },
+    {
+      "number": "XXX 2XX",
+      "title": "Elective",
+      "creditHours": 2
+    },
+    {
+      "number": "CSE 486",
+      "title": "Computer Science Capstone II",
+      "creditHours": 3
+    },
+    {
+      "number": "CSE 4X4",
+      "title": "Upper Division CS Elective",
+      "creditHours": 3
+    },
+    {
+      "number": "CSE 4X5",
+      "title": "Upper Division CS Elective",
+      "creditHours": 3
+    },
+    {
+      "number": "TEC 2XX",
+      "title": "Upper Division Technical Elective",
       "creditHours": 3
     }
   ]
