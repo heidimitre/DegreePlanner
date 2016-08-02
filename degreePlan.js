@@ -77,19 +77,18 @@ DegreePlan.prototype.getMaxDepth = function(courseNumber){
 DegreePlan.prototype.calculateDepths = function(head){
   var temp = [];
   var horizon = []; //contains all courses at a particular level
-  var depth = 1;
+  var depth = 0;
 
   horizon.push(this.findCourse(head));
-  this.findCourse(head).depthArray.push(0);
 
-  while(this.listHasPrerequisite(horizon) === true)
+  while(horizon.length > 0)
   {
     for(var j = 0; j < horizon.length; j++)
     {
+      horizon[j].depthArray.push(depth);
       for(var k = 0; k < horizon[j].prerequisiteList.length; k++)
       {
         temp.push(horizon[j].prerequisiteList[k]);
-        horizon[j].prerequisiteList[k].depthArray.push(depth);
       }
     }
     depth++;
@@ -101,14 +100,6 @@ DegreePlan.prototype.calculateDepths = function(head){
 DegreePlan.prototype.findHeads = function(){
   //finds head of each tree and returns array
   //if class has prerequisite but is not prerequisite for another course
-};
-
-DegreePlan.prototype.listHasPrerequisite = function(list){
-  for(var i = 0; i < list.length; i++){
-    if(list[i].hasPrerequisites() === true)
-      return true;
-  }
-  return false;
 };
 
 DegreePlan.prototype.toString = function(){
