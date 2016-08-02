@@ -50,3 +50,33 @@ describe('hasDepth', function(){
     expect(plan.getMaxDepth("240")).toBe(3);
   });
 });
+describe('findHeads', function(){
+  it('finds all heads in the courseList.', function(){
+    var plan = new DegreePlan('Computer Science');
+    plan.addCourse('485', 'x', 3);
+    plan.addCourse('355', 'x', 3);
+    plan.addCourse('360', 'x', 3);
+    plan.addCourse('105', 'x', 3);
+    plan.addCourse('420', 'x', 3);
+    plan.addCourse('301', 'x', 3);
+    plan.addCourse('400', 'x', 3);
+
+    plan.addPrerequisite('485', '355');
+    plan.addPrerequisite('485', '360');
+    plan.addPrerequisite('420', '301');
+    plan.addPrerequisite('420', '400');
+
+    expect(containsHead("420", plan.findHeads())).toEqual(true);
+    expect(containsHead("485", plan.findHeads())).toEqual(true);
+    expect(containsHead("105", plan.findHeads())).toEqual(true);
+    expect(plan.findHeads().length).toBe(3);
+  });
+});
+
+function containsHead(head, headArray){
+  return headArray.reduce(function(boolean, course){
+    if(course.number == head)
+      return true;
+    return boolean;
+  }, false);
+};
