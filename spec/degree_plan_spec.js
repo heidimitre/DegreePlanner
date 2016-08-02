@@ -47,21 +47,3 @@ describe('requiresPrerequisite', function(){
     expect(plan.requiresPrerequisites("CSE 430")).toBe(false);
   });
 });
-
-describe('countPrerequsiteChain', function(){
-  it('returns zero if no prerequisites found.', function(){
-    var plan = new DegreePlan('Computer Science');
-    plan.addCourse('CSE 205', 'OOP', 3);
-
-    expect(plan.countPrerequisiteChain("CSE 205")).toBe(0);
-  });
-  it('returns 1 if only one prerequisite required.', function(){
-    var plan = new DegreePlan('Computer Science');
-    plan.addCourse('CSE 205', 'OOP', 3);
-    plan.addCourse('CSE 110', 'Intro to Java', 3);
-
-    plan.addPrerequisite('CSE 205', 'CSE 110');
-
-    expect(plan.countPrerequisiteChain("CSE 205")).toBe(1);
-  });
-});

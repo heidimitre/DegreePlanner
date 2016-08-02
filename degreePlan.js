@@ -61,10 +61,54 @@ DegreePlan.prototype.requiresPrerequisites = function(courseNumber){
   return false;
 };
 
-DegreePlan.prototype.countPrerequisiteChain = function(courseNumber){
-  if(this.requiresPrerequisites(courseNumber) === true)
-    return 1;
-  return 0;
+//find max in depthArray
+DegreePlan.prototype.getMaxDepth = function(courseNumber){
+  var depthArray = this.findCourse(courseNumber).depthArray;
+  var max = 0;
+  for(var i = 0; i < depthArray.length; i++)
+  {
+    if(depthArray[i] > max)
+      max = depthArray[i];
+  }
+  return max;
+};
+
+//creates data structure and arrays at each level
+DegreePlan.prototype.calculateDepths = function(head){
+  var temp = [];
+  var horizon = []; //contains all courses at a particular level
+  var depth = 1;
+
+  horizon.push(this.findCourse(head));
+  this.findCourse(head).depthArray.push(0);
+
+  while(this.listHasPrerequisite(horizon) === true)
+  {
+    for(var j = 0; j < horizon.length; j++)
+    {
+      for(var k = 0; k < horizon[j].prerequisiteList.length; k++)
+      {
+        temp.push(horizon[j].prerequisiteList[k]);
+        horizon[j].prerequisiteList[k].depthArray.push(depth);
+      }
+    }
+    depth++;
+    horizon = temp;
+    temp = [];
+  }
+};
+
+DegreePlan.prototype.findHeads = function(){
+  //finds head of each tree and returns array
+  //if class has prerequisite but is not prerequisite for another course
+};
+
+DegreePlan.prototype.listHasPrerequisite = function(list){
+  for(var i = 0; i < list.length; i++){
+    if(list[i].hasPrerequisites() === true)
+      return true;
+  }
+  return false;
 };
 
 DegreePlan.prototype.toString = function(){
