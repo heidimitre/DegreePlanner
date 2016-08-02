@@ -55,6 +55,18 @@ DegreePlan.prototype.addPrerequisite = function(courseNumber, prerequisiteNumber
   return 0;
 };
 
+DegreePlan.prototype.requiresPrerequisites = function(courseNumber){
+  if(this.findCourse(courseNumber).hasPrerequisites() === true)
+    return true;
+  return false;
+};
+
+DegreePlan.prototype.countPrerequisiteChain = function(courseNumber){
+  if(this.requiresPrerequisites(courseNumber) === true)
+    return 1;
+  return 0;
+};
+
 DegreePlan.prototype.toString = function(){
   var courseStrings = this.courseList.reduce(function(acc, course){
     acc += course.toString();
