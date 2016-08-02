@@ -27,4 +27,26 @@ describe('hasDepth', function(){
     expect(plan.getMaxDepth("266")).toBe(2);
     expect(plan.getMaxDepth("110")).toBe(3);
   });
+  it('finds max depth when course is at multiple levels.', function(){
+    var plan = new DegreePlan('CS');
+    plan.addCourse('485', 'x', 3);
+    plan.addCourse('355', 'x', 3);
+    plan.addCourse('360', 'x', 3);
+    plan.addCourse('310', 'x', 3);
+    plan.addCourse('240', 'x', 3);
+
+
+    plan.addPrerequisite('485', '355');
+    plan.addPrerequisite('485', '360');
+    plan.addPrerequisite('355', '310');
+    plan.addPrerequisite('360', '240');
+    plan.addPrerequisite('310', '240');
+
+    plan.calculateDepths("485");
+
+    expect(plan.getMaxDepth("485")).toBe(0);
+    expect(plan.getMaxDepth("355")).toBe(1);
+    expect(plan.getMaxDepth("310")).toBe(2);
+    expect(plan.getMaxDepth("240")).toBe(3);
+  });
 });
