@@ -75,7 +75,7 @@ describe('findHeads', function(){
 
 function containsHead(head, headArray){
   return headArray.reduce(function(boolean, course){
-    if(course.number == head)
+    if(course.number === head)
       return true;
     return boolean;
   }, false);
