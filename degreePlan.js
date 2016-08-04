@@ -119,10 +119,12 @@ DegreePlan.prototype.findHeads = function(){
   return heads;
 };
 
+//returns array of courses given specified semester number
 DegreePlan.prototype.getSemesterCourses = function(semesterNumber){
   return this.semesterContainer[semesterNumber-1];
 };
 
+/*
 DegreePlan.prototype.createNewSemester = function(){
   var newSemester = [];
   this.semesterContainer.push(newSemester);
@@ -147,7 +149,7 @@ DegreePlan.prototype.addPriortityCourse = function(){ //
 
 DegreePlan.prototype.addCourseToSemester = function(course){
   var currentSemester = this.getCurrentSemester();
-  if(currentSemester.length >= 4) //should be changed later to vary based on credit hours
+  if(currentSemester.length === 4) //should be changed later to vary based on credit hours
   {
       for(var i = 0; i < currentSemester.length; i++)
       {
@@ -161,42 +163,44 @@ DegreePlan.prototype.addCourseToSemester = function(course){
   currentSemester.push(course);
 };
 
-DegreePlan.prototype.findNextClass = function(){
-  for(var i = 0; i < this.courseList.length; i++)
+*/
+
+DegreePlan.prototype.findNextCourse = function(){
+  var highestDepth = 0;
+  var nextCourse = null;
+  var courseList = this.courseList;
+
+  for(var i = 0; i < courseList.length; i++)
   {
-    if((this.getMaxDepth(this.courseList[i].number) === this.findHighestPriority()) && this.courseList[i].isComplete === false && this.courseList[i].inProgress === false)
+    if(this.isNotTaken(courseList[i].number) && (this.prerequsitesCompleted(courseList[i].number)))
     {
-      var prerequisitesInProgress = false;
-      for(var j = 0; j < this.courseList[i].prerequisiteList.length; j++)
+      if(this.getMaxDepth(courseList[i].number) > highestDepth)
       {
-        if(this.courseList[i].prerequisiteList[j].inProgress === true && this.courseList[i].prerequisiteList[j].isComplete === false)
-          prerequisitesInProgress = true;
+        highestDepth = this.getMaxDepth(courseList[i].number);
+        nextCourse = this.courseList[i];
       }
-      if (prerequisitesInProgress === false)
-        return this.courseList[i];
     }
   }
+  nextCourse.inProgress = true;
+  return nextCourse;
 };
 
-DegreePlan.prototype.findHighestPriority = function(){
-  var highestCoursePriority = 0;
-  for(var i = 0; i < this.courseList.length; i++)
+DegreePlan.prototype.isNotTaken = function(courseNumber){
+  var course = this.findCourse(courseNumber);
+  if(course.isComplete === false && course.inProgress === false)
+    return true;
+  return false;
+};
+
+DegreePlan.prototype.prerequsitesCompleted = function(courseNumber){
+  var course = this.findCourse(courseNumber);
+  for(var i = 0; i < course.prerequisiteList.length; i++)
   {
-    if((this.getMaxDepth(this.courseList[i].number) > highestCoursePriority) && this.courseList[i].isComplete === false && this.courseList[i].inProgress === false)
-    {
-      var prerequisitesInProgress = false;
-      for(var j = 0; j < this.courseList[i].prerequisiteList.length; j++)
-      {
-        if(this.courseList[i].prerequisiteList[j].inProgress === true && this.courseList[i].prerequisiteList[j].isComplete === false)
-          prerequisitesInProgress = true;
-      }
-      if (prerequisitesInProgress === false)
-      highestCoursePriority = this.getMaxDepth(this.courseList[i].number);
-    }
+    if(course.prerequisiteList[i].isComplete === false)
+      return false;
   }
-  return highestCoursePriority;
+  return true;
 };
-
 
 DegreePlan.prototype.toString = function(){
   var courseStrings = this.courseList.reduce(function(acc, course){
