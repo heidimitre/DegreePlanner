@@ -62,6 +62,40 @@ DegreePlan.prototype.requiresPrerequisites = function(courseNumber){
   return false;
 };
 
+DegreePlan.prototype.getSemester = function(semesterNumber){
+
+};
+
+DegreePlan.prototype.manageSemesters = function(){
+  //calls addSemesterToContainer until all classes have been added
+};
+
+DegreePlan.prototype.addSemesterToContainer = function(){
+  var semester = this.createSemester();
+  this.semesterComplete(semester);
+  this.semesterContainer.push(semester);
+};
+
+DegreePlan.prototype.createSemester = function(){
+  var semesterArray = [];
+  var course = this.findNextCourse();
+  while(course !== null && semesterArray.length < 4)
+  {
+    semesterArray.push(course);
+    course = this.findNextCourse();
+  }
+  return semesterArray;
+};
+
+DegreePlan.prototype.semesterComplete = function(semesterArray){
+  for(var i = 0; i < semesterArray.length; i++)
+  {
+    semesterArray[i].isComplete = true;
+    semesterArray[i].inProgress = false;
+  }
+};
+
+
 //find max in depthArray
 DegreePlan.prototype.getMaxDepth = function(courseNumber){
   var depthArray = this.findCourse(courseNumber).depthArray;
@@ -119,52 +153,6 @@ DegreePlan.prototype.findHeads = function(){
   return heads;
 };
 
-//returns array of courses given specified semester number
-DegreePlan.prototype.getSemesterCourses = function(semesterNumber){
-  return this.semesterContainer[semesterNumber-1];
-};
-
-/*
-DegreePlan.prototype.createNewSemester = function(){
-  var newSemester = [];
-  this.semesterContainer.push(newSemester);
-};
-
-DegreePlan.prototype.getCurrentSemester = function(){
-  if(this.semesterContainer.length === 0)
-    this.createNewSemester();
-  return this.semesterContainer[this.semesterContainer.length - 1];
-};
-
-DegreePlan.prototype.addPriortityCourse = function(){ //
-  var hasRemainingCourses = false;
-  for(var i = 0; i < this.courseList.length; i++)
-  {
-    if(this.courseList[i].isComplete === false && this.courseList[i].inProgress === false)
-      hasRemainingCourses = true;
-  }
-  if(hasRemainingCourses === true)
-    this.addCourseToSemester(this.findNextClass());
-};
-
-DegreePlan.prototype.addCourseToSemester = function(course){
-  var currentSemester = this.getCurrentSemester();
-  if(currentSemester.length === 4) //should be changed later to vary based on credit hours
-  {
-      for(var i = 0; i < currentSemester.length; i++)
-      {
-        currentSemester[i].isComplete = true;
-        currentSemester[i].inProgress = false;
-      }
-      this.createNewSemester();
-      currentSemester = this.getCurrentSemester();
-  }
-  course.inProgress = true;
-  currentSemester.push(course);
-};
-
-*/
-
 DegreePlan.prototype.findNextCourse = function(){
   var highestDepth = 0;
   var nextCourse = null;
@@ -181,7 +169,8 @@ DegreePlan.prototype.findNextCourse = function(){
       }
     }
   }
-  nextCourse.inProgress = true;
+  if(nextCourse !== null)
+    nextCourse.inProgress = true;
   return nextCourse;
 };
 
