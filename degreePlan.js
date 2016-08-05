@@ -62,12 +62,22 @@ DegreePlan.prototype.requiresPrerequisites = function(courseNumber){
   return false;
 };
 
-DegreePlan.prototype.getSemester = function(semesterNumber){
+DegreePlan.prototype.createPlan = function(){
+  var heads = this.findHeads();
+  for(var i = 0; i < heads.length; i++)
+  {
+    this.calculateDepths(heads[i].number);
+  }
 
+  this.manageSemesters();
+};
+
+DegreePlan.prototype.getSemester = function(semesterNumber){
+  return this.semesterContainer[semesterNumber - 1];
 };
 
 DegreePlan.prototype.manageSemesters = function(){
-  //calls addSemesterToContainer until all classes have been added
+  while(this.addSemesterToContainer());
 };
 
 DegreePlan.prototype.addSemesterToContainer = function(){

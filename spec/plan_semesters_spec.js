@@ -1,7 +1,7 @@
 var DegreePlan = require('../degreePlan');
-/*
+
 describe('getSemester', function(){
-  xit('returns a list of the correct classes when given a semester.', function(){
+  it('returns a list of the correct classes when given a semester.', function(){
 
     var plan = new DegreePlan('Computer Science');
 
@@ -24,6 +24,8 @@ describe('getSemester', function(){
       plan.calculateDepths(heads[i].number);
     }
 
+    plan.manageSemesters();
+
     expect(containsCourse("360", plan.getSemester(1))).toEqual(true);
     expect(containsCourse("355", plan.getSemester(1))).toEqual(true);
     expect(containsCourse("301", plan.getSemester(1))).toEqual(true);
@@ -33,7 +35,6 @@ describe('getSemester', function(){
     expect(containsCourse("485", plan.getSemester(2))).toEqual(true);
   });
 });
-*/
 
 function containsCourse(courseNumber, semesterList){
   return semesterList.reduce(function(boolean, course){
@@ -171,6 +172,49 @@ describe('semesterComplete', function(){
     expect(plan.findCourse("240").inProgress).toEqual(false);
     expect(plan.findCourse("105").isComplete).toEqual(true);
     expect(plan.findCourse("105").inProgress).toEqual(false);
+
+  });
+});
+
+describe('addSemesterToContainer', function(){
+  it('places an array of courses for the first semester in the semester container.', function(){
+    var plan = new DegreePlan("CS");
+
+    plan.addCourse('485', 'x', 3);
+    plan.addCourse('355', 'x', 3);
+    plan.addCourse('360', 'x', 3);
+    plan.addCourse('240', 'x', 3);
+    plan.addCourse('205', 'x', 3);
+    plan.addCourse('105', 'x', 3);
+    plan.addCourse('420', 'x', 3);
+    plan.addCourse('301', 'x', 3);
+    plan.addCourse('400', 'x', 3);
+
+    plan.addPrerequisite('485', '355');
+    plan.addPrerequisite('485', '360');
+    plan.addPrerequisite('420', '301');
+    plan.addPrerequisite('420', '400');
+    plan.addPrerequisite('360', '240');
+    plan.addPrerequisite('240', '205');
+
+    var heads = plan.findHeads();
+    for(var i = 0; i < heads.length; i++)
+    {
+      plan.calculateDepths(heads[i].number);
+    }
+
+    plan.addSemesterToContainer();
+
+    expect(containsCourse("205", plan.semesterContainer[0])).toEqual(true);
+    expect(containsCourse("301", plan.semesterContainer[0])).toEqual(true);
+    expect(containsCourse("400", plan.semesterContainer[0])).toEqual(true);
+    expect(containsCourse("355", plan.semesterContainer[0])).toEqual(true);
+
+    plan.addSemesterToContainer();
+
+    expect(containsCourse("420", plan.semesterContainer[1])).toEqual(true);
+    expect(containsCourse("240", plan.semesterContainer[1])).toEqual(true);
+    expect(containsCourse("105", plan.semesterContainer[1])).toEqual(true);
 
   });
 });
