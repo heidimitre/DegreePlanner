@@ -110,7 +110,6 @@ DegreePlan.prototype.semesterComplete = function(semesterArray){
   }
 };
 
-
 //find max in depthArray
 DegreePlan.prototype.getMaxDepth = function(courseNumber){
   var depthArray = this.findCourse(courseNumber).depthArray;
@@ -210,6 +209,24 @@ DegreePlan.prototype.toString = function(){
     return acc;
   }, "");
   return "Degree Plan Name: " + this.name + "\n" + courseStrings;
+};
+
+DegreePlan.prototype.printSemester = function(semesterNumber){
+  var semesterString = "Semester " + semesterNumber + ": \n";
+  var semester = this.getSemester(semesterNumber);
+  for(var i = 0; i < semester.length; i++)
+  {
+    semesterString = semesterString + semester[i].toString();
+  }
+  console.log(semesterString);
+  return semesterString + "\n";
+};
+
+DegreePlan.prototype.printPlan = function(){
+  var degreePlanOutput = "";
+  for(var i = 0; i < this.semesterContainer.length; i++)
+    degreePlanOutput = degreePlanOutput + this.printSemester(i + 1);
+  return degreePlanOutput;
 };
 
 module.exports = DegreePlan;

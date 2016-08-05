@@ -52,7 +52,7 @@ Course.prototype.hasPrerequisites = function(course){
 };
 
  Course.prototype.toString = function(){
-  return this.number + ", " + this.title + ", Credit Hours: " + this.creditHours + ", Complete: " + this.isComplete + ", Prerequisites: " + this.displayPrerequisites() + "\n";
+  return this.number + ", " + this.title + ", Credit Hours: " + this.creditHours + "\n";
  };
 
 Course.prototype.displayPrerequisites = function(){

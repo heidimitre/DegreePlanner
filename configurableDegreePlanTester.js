@@ -25,6 +25,4 @@ function makeRelationships(relationshipsList){
 createPlan(courses.list);
 makeRelationships(relationships.list);
 plan.createPlan();
-console.log(plan.semesterContainer);
-console.log(plan.semesterContainer.length);
 writePlan(plan);
