@@ -77,8 +77,7 @@ describe('createSemester', function(){
     expect(containsCourse("400", semester)).toEqual(true);
     expect(containsCourse("355", semester)).toEqual(true);
   });
-});
-/*
+
   it('returns an array with the courses for the second semester.', function(){
     var plan = new DegreePlan("CS");
 
@@ -107,20 +106,23 @@ describe('createSemester', function(){
 
 
     var firstSemester = plan.createSemester();
-    plan.addSemesterToContainer(firstSemester);
-    console.log(firstSemester);
+
+    for(var i = 0; i < firstSemester.length; i++)
+    {
+      firstSemester[i].isComplete = true;
+      firstSemester[i].inProgress = false;
+    }
 
     var secondSemester = plan.createSemester();
-
-    console.log(secondSemester);
 
     expect(containsCourse("240", secondSemester)).toEqual(true);
     expect(containsCourse("420", secondSemester)).toEqual(true);
     expect(containsCourse("105", secondSemester)).toEqual(true);
 
+
   });
 });
-*/
+
 describe('semesterComplete', function(){
   it('marks courses as complete after adding them to the semester.', function(){
     var plan = new DegreePlan("CS");
@@ -159,6 +161,16 @@ describe('semesterComplete', function(){
     expect(plan.findCourse("400").inProgress).toEqual(false);
     expect(plan.findCourse("355").isComplete).toEqual(true);
     expect(plan.findCourse("355").inProgress).toEqual(false);
+
+    var secondSemester = plan.createSemester();
+    plan.semesterComplete(secondSemester);
+
+    expect(plan.findCourse("420").isComplete).toEqual(true);
+    expect(plan.findCourse("420").inProgress).toEqual(false);
+    expect(plan.findCourse("240").isComplete).toEqual(true);
+    expect(plan.findCourse("240").inProgress).toEqual(false);
+    expect(plan.findCourse("105").isComplete).toEqual(true);
+    expect(plan.findCourse("105").inProgress).toEqual(false);
 
   });
 });

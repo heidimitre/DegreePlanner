@@ -72,15 +72,20 @@ DegreePlan.prototype.manageSemesters = function(){
 
 DegreePlan.prototype.addSemesterToContainer = function(){
   var semester = this.createSemester();
-  this.semesterComplete(semester);
-  this.semesterContainer.push(semester);
+  if(semester.length > 0){
+    this.semesterComplete(semester);
+    this.semesterContainer.push(semester);
+    return true;
+  }
+  return false;
 };
 
 DegreePlan.prototype.createSemester = function(){
   var semesterArray = [];
   var course = this.findNextCourse();
-  while(course !== null && semesterArray.length < 4)
+  while(course != null && semesterArray.length < 4)
   {
+    course.inProgress = true;
     semesterArray.push(course);
     course = this.findNextCourse();
   }
@@ -162,15 +167,13 @@ DegreePlan.prototype.findNextCourse = function(){
   {
     if(this.isNotTaken(courseList[i].number) && (this.prerequsitesCompleted(courseList[i].number)))
     {
-      if(this.getMaxDepth(courseList[i].number) > highestDepth)
+      if(this.getMaxDepth(courseList[i].number) >= highestDepth)
       {
         highestDepth = this.getMaxDepth(courseList[i].number);
         nextCourse = this.courseList[i];
       }
     }
   }
-  if(nextCourse !== null)
-    nextCourse.inProgress = true;
   return nextCourse;
 };
 
