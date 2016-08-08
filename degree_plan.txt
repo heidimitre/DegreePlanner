@@ -1,63 +1,35 @@
 Semester 1: 
-CSE 110, Principles of Programming with Java, Credit Hours: 3
-MAT 265, Calculus for Engineers I, Credit Hours: 3
+MAT 243, Discrete Mathematical Structures, Credit Hours: 3
 CSE 120, Digital Design Fundamentals, Credit Hours: 3
-ENG 101, First-Year Composition I, Credit Hours: 3
+CSE 360, Introduction to Software Engineering, Credit Hours: 3
+IEE 380, Probability and Statistics for Engineering Problem Solving, Credit Hours: 3
+CSE 301, Computing Ethics, Credit Hours: 1
+FSE 100, Introduction to Engineering, Credit Hours: 2
 
 Semester 2: 
-CSE 205, Object-Oriented Programming and Data Structures, Credit Hours: 3
-MAT 243, Discrete Mathematical Structures, Credit Hours: 3
-CSE 230, Computer Organization and Assembly Language Programming, Credit Hours: 3
-MAT 266, Calculus for Engineers II, Credit Hours: 3
-
-Semester 3: 
-CSE 240, Introduction to Programming Languages, Credit Hours: 3
-IEE 380, Probability and Statistics for Engineering Problem Solving, Credit Hours: 3
-XXX 2XX, Elective, Credit Hours: 2
-UHS XXX, Upper-Division Humanities, Arts and Design (HU) or Social-Behavioral Sciences (SB), Credit Hours: 3
-
-Semester 4: 
 CSE 310, Data Structures and Algorithms, Credit Hours: 3
-CSE 360, Introduction to Software Engineering, Credit Hours: 3
+CSE 230, Computer Organization and Assembly Language Programming, Credit Hours: 3
 TEC 2XX, Upper Division Technical Elective, Credit Hours: 3
 TEC 1XX, Upper Division Technical Elective, Credit Hours: 3
+MAT 343, Applied Linear Algebra, Credit Hours: 3
 
-Semester 5: 
+Semester 3: 
 CSE 430, Operating Systems, Credit Hours: 3
 CSE 355, Introduction to Theoretical Computer Science, Credit Hours: 3
 CSE 340, Principles of Programming Languages, Credit Hours: 3
 CSE 4X5, Upper Division CS Elective, Credit Hours: 3
-
-Semester 6: 
-CSE 485, Computer Science Capstone I, Credit Hours: 3
 CSE 4X4, Upper Division CS Elective, Credit Hours: 3
+
+Semester 4: 
+CSE 485, Computer Science Capstone I, Credit Hours: 3
 CSE 4X3, Upper Division CS Elective, Credit Hours: 3
 CSE 4X2, Upper Division CS Elective, Credit Hours: 3
-
-Semester 7: 
-CSE 486, Computer Science Capstone II, Credit Hours: 3
 CSE 4X1, Upper Division CS Elective, Credit Hours: 3
-SBX XXX, Social-Behavioral Sciences (SB), Credit Hours: 3
-SBH XXX, Social-Behavioral Sciences (SB) and Historical Awareness (H), Credit Hours: 3
-
-Semester 8: 
-CSE 301, Computing Ethics, Credit Hours: 1
-HUX XXX, Humanities, Arts and Design (HU), Credit Hours: 3
-SCI 3XX, Lab Science and Natural Science-General (SG) or Quantitative (SQ), Credit Hours: 4
-MAT 343, Applied Linear Algebra, Credit Hours: 3
-
-Semester 9: 
-HUC XXX, Humanities, Arts and Design (HU) and Cultural Diversity in the U.S. (C), Credit Hours: 3
-SCI 2XX, Lab Science and Natural Science-General (SG) or Quantitative (SQ), Credit Hours: 4
 MAT 267, Calculus for Engineers III, Credit Hours: 3
-XXX 1XX, Elective, Credit Hours: 3
 
-Semester 10: 
+Semester 5: 
+CSE 486, Computer Science Capstone II, Credit Hours: 3
+SCI 3XX, Lab Science and Natural Science-General (SG) or Quantitative (SQ), Credit Hours: 4
+SCI 2XX, Lab Science and Natural Science-General (SG) or Quantitative (SQ), Credit Hours: 4
 SCI 1XX, Lab Science and Natural Science-Quantitative (SQ), Credit Hours: 4
-ENG 102, First-Year Composition II, Credit Hours: 3
-SBG XXX, Social-Behavioral Sciences (SB) and Global Awareness(G), Credit Hours: 3
-FSE 100, Introduction to Engineering, Credit Hours: 2
-
-Semester 11: 
-ASU 101, The ASU Experience, Credit Hours: 1
 

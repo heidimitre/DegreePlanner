@@ -4,6 +4,7 @@ var DegreePlan = function(name){
   this.name = name;
   this.courseList = [];
   this.semesterContainer = [];
+  this.maxCreditHours = 12;
 };
 
 //Checks if course is already in array
@@ -51,7 +52,7 @@ DegreePlan.prototype.findCourse = function(courseNumber){
 DegreePlan.prototype.addPrerequisite = function(courseNumber, prerequisiteNumber){
   var course = this.findCourse(courseNumber);
   var prerequisite = this.findCourse(prerequisiteNumber);
-  if(course.addPrerequisite(prerequisite) === 1)
+  if(course != null && prerequisite != null && course.addPrerequisite(prerequisite) === 1)
     return 1;
   return 0;
 };
@@ -62,8 +63,9 @@ DegreePlan.prototype.requiresPrerequisites = function(courseNumber){
   return false;
 };
 
-DegreePlan.prototype.createPlan = function(){
+DegreePlan.prototype.createPlan = function(maxCreditHours){
   var heads = this.findHeads();
+  this.maxCreditHours = (maxCreditHours || 12);
   for(var i = 0; i < heads.length; i++)
   {
     this.calculateDepths(heads[i].number);
@@ -92,14 +94,40 @@ DegreePlan.prototype.addSemesterToContainer = function(){
 
 DegreePlan.prototype.createSemester = function(){
   var semesterArray = [];
+  var consideredCourses = [];
   var course = this.findNextCourse();
-  while(course != null && semesterArray.length < 4)
+  while(course != null && countCreditHours(semesterArray) !== this.maxCreditHours)
   {
-    course.inProgress = true;
-    semesterArray.push(course);
+    if(countCreditHours(semesterArray) + course.creditHours <= this.maxCreditHours)
+    {
+      course.inProgress = true;
+      semesterArray.push(course);
+    }
+    else
+    {
+      course.considered = true;
+      consideredCourses.push(course);
+    }
     course = this.findNextCourse();
   }
+  completeConsidering(consideredCourses);
   return semesterArray;
+};
+
+function countCreditHours(semester){
+  var sum = 0;
+  for(var i = 0; i < semester.length; i++)
+  {
+    sum += semester[i].creditHours;
+  }
+  return sum;
+};
+
+function completeConsidering(consideredCourselist){
+  for(var i = 0; i < consideredCourselist.length; i++)
+  {
+    consideredCourselist[i].considered = false;
+  }
 };
 
 DegreePlan.prototype.semesterComplete = function(semesterArray){
@@ -188,7 +216,7 @@ DegreePlan.prototype.findNextCourse = function(){
 
 DegreePlan.prototype.isNotTaken = function(courseNumber){
   var course = this.findCourse(courseNumber);
-  if(course.isComplete === false && course.inProgress === false)
+  if(course.isComplete === false && course.inProgress === false && course.considered === false)
     return true;
   return false;
 };

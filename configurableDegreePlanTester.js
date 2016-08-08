@@ -1,4 +1,4 @@
-var courses = require('./resources/degreePlan.json');
+var courses = require('./resources/remainingCourses.json');
 var relationships = require('./resources/relationships.json');
 var DegreePlan = require('./degreePlan');
 var Course = require('./course');
@@ -24,5 +24,5 @@ function makeRelationships(relationshipsList){
 
 createPlan(courses.list);
 makeRelationships(relationships.list);
-plan.createPlan();
+plan.createPlan(15);
 writePlan(plan);

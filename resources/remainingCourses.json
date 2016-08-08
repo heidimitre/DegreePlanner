@@ -1,0 +1,131 @@
+{
+  "name": "Computer Science",
+
+  "list": [
+    {
+      "number": "FSE 100",
+      "title": "Introduction to Engineering",
+      "creditHours": 2
+    },
+    {
+      "number": "SCI 1XX",
+      "title": "Lab Science and Natural Science-Quantitative (SQ)",
+      "creditHours": 4
+    },
+    {
+      "number": "CSE 120",
+      "title": "Digital Design Fundamentals",
+      "creditHours": 3
+    },
+    {
+      "number": "MAT 243",
+      "title": "Discrete Mathematical Structures",
+      "creditHours": 3
+    },
+    {
+      "number": "MAT 267",
+      "title": "Calculus for Engineers III",
+      "creditHours": 3
+    },
+    {
+      "number": "SCI 2XX",
+      "title": "Lab Science and Natural Science-General (SG) or Quantitative (SQ)",
+      "creditHours": 4
+    },
+    {
+      "number": "CSE 230",
+      "title": "Computer Organization and Assembly Language Programming",
+      "creditHours": 3
+    },
+    {
+      "number": "MAT 343",
+      "title": "Applied Linear Algebra",
+      "creditHours": 3
+    },
+    {
+      "number": "SCI 3XX",
+      "title": "Lab Science and Natural Science-General (SG) or Quantitative (SQ)",
+      "creditHours": 4
+    },
+    {
+      "number": "CSE 310",
+      "title": "Data Structures and Algorithms",
+      "creditHours": 3
+    },
+    {
+      "number": "CSE 301",
+      "title": "Computing Ethics",
+      "creditHours": 1
+    },
+    {
+      "number": "CSE 360",
+      "title": "Introduction to Software Engineering",
+      "creditHours": 3
+    },
+    {
+      "number": "IEE 380",
+      "title": "Probability and Statistics for Engineering Problem Solving",
+      "creditHours": 3
+    },
+    {
+      "number": "CSE 340",
+      "title": "Principles of Programming Languages",
+      "creditHours": 3
+    },
+    {
+      "number": "CSE 355",
+      "title": "Introduction to Theoretical Computer Science",
+      "creditHours": 3
+    },
+    {
+      "number": "CSE 4X1",
+      "title": "Upper Division CS Elective",
+      "creditHours": 3
+    },
+    {
+      "number": "TEC 1XX",
+      "title": "Upper Division Technical Elective",
+      "creditHours": 3
+    },
+    {
+      "number": "CSE 485",
+      "title": "Computer Science Capstone I",
+      "creditHours": 3
+    },
+    {
+      "number": "CSE 430",
+      "title": "Operating Systems",
+      "creditHours": 3
+    },
+    {
+      "number": "CSE 4X2",
+      "title": "Upper Division CS Elective",
+      "creditHours": 3
+    },
+    {
+      "number": "CSE 4X3",
+      "title": "Upper Division CS Elective",
+      "creditHours": 3
+    },
+    {
+      "number": "CSE 486",
+      "title": "Computer Science Capstone II",
+      "creditHours": 3
+    },
+    {
+      "number": "CSE 4X4",
+      "title": "Upper Division CS Elective",
+      "creditHours": 3
+    },
+    {
+      "number": "CSE 4X5",
+      "title": "Upper Division CS Elective",
+      "creditHours": 3
+    },
+    {
+      "number": "TEC 2XX",
+      "title": "Upper Division Technical Elective",
+      "creditHours": 3
+    }
+  ]
+}

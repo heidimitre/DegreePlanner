@@ -5,6 +5,7 @@ var Course = function(number, title, creditHours){
   this.prerequisiteList = [];
   this.isComplete = false;  //all courses are considered incomplete by default
   this.inProgress = false;
+  this.considered = false;
   this.depthArray = [];
 };
 
